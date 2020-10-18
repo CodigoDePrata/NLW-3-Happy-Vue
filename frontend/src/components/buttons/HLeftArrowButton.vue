@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <img src="@/assets/images/icons/plus.svg" class="icon"/>
+    <img src="@/assets/images/icons/arrow-left.svg" class="icon" />
   </div>
 </template>
 
@@ -9,17 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: #15C3D6;
-  border-radius: 30px;
+  width: 48px;
+  height: 48px;
+  background: #12AFCB;
+  border-radius: 16px;
 }
 .button:hover {
   background: #17D6EB;
 }
 
 .icon {
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
 }
 </style>

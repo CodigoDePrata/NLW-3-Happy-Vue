@@ -14,13 +14,13 @@
 
     <div class="right-wrapper">
       <LocationText city="Caraguatatuba" uf="São Paulo" />
-      <HArrowButton icon="@/assets/images/icons/arrow-right.svg"/>
+      <HRightArrowButton icon="@/assets/images/icons/arrow-right.svg"/>
     </div>
   </div>
 </template>
 
 <script setup>
-export { default as HArrowButton } from "@/components/buttons/HArrowButton";
+export { default as HRightArrowButton } from "@/components/buttons/HRightArrowButton";
 export { default as HLocation } from "@/components/HLocation";
 </script>
 

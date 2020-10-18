@@ -20,7 +20,7 @@
 <script setup>
 export { default as HLocation } from "@/components/HLocation";
 export { default as HPlusButton } from "@/components/buttons/HPlusButton";
-export { default as Map } from "@/components/Map";
+export { default as HMap } from "@/components/HMap";
 </script>
 
 <style>
