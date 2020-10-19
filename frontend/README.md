@@ -1,4 +1,4 @@
-# happy
+# frontend
 
 ## Project setup
 ```
