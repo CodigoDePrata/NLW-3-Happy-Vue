@@ -1,13 +1,13 @@
 <template>
-  <label>
-    <div class="mt-6 mb-2 text-color-title">
+  <div>
+    <div class="mt-6 mb-2 text-gray-300">
       <span class="mr-8 font-semibold">{{ label }}</span>
       <span v-if="instructions" class="text-sm">{{ instructions }}</span>
     </div>
     <div class="input-wrapper">
       <slot></slot>
     </div>
-  </label>
+  </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
