@@ -1,10 +1,16 @@
 module.exports = {
+  important: true,
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
   purge: [],
   theme: {
+    extend: {
+      borderRadius: {
+        "4xl": "1.875rem"
+      }
+    },
     colors: {
       white: "#FFFFFF",
       black: "#000000",
