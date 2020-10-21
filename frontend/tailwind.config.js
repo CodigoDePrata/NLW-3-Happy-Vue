@@ -40,6 +40,7 @@ module.exports = {
       green: {
         default: "#37C77F",
         50: "#EDFFF6",
+        400: "#3EE08F",
         500: "#37C77F"
       },
       red: {
