@@ -20,12 +20,12 @@ export default class BaseInputControl extends Vue {
 </script>
 
 <style lang="postcss" scoped>
-.input-wrapper >>> input,
+.input-wrapper >>> input:not([type="file"]),
 .input-wrapper >>> textarea {
   @apply border border-gray-200 rounded-2xl bg-gray-50 w-full p-4 text-gray-500;
 }
 
-.input-wrapper >>> input {
+.input-wrapper >>> input:not([type="file"]) {
   @apply h-16;
 }
 
