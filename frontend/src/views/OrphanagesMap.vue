@@ -76,7 +76,7 @@ import BaseButton from "@/components/base/BaseButton.vue";
     LIcon,
   },
 })
-export default class Orphanages extends Vue {
+export default class OrphanagesMap extends Vue {
   center: LatLng = latLng(-23.6222, -45.4074);
 }
 </script>

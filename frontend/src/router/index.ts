@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "@/views/Home.vue";
-import Orphanages from "@/views/Orphanages.vue";
+import OrphanagesMap from "@/views/OrphanagesMap.vue";
+import Orphanage from "@/views/Orphanage.vue";
 import CreateOrphanage from "@/views/CreateOrphanage.vue";
 
 Vue.use(VueRouter);
@@ -14,14 +15,18 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/orphanages",
-    name: "Orphanages",
-    component: Orphanages,
+    name: "OrphanagesMap",
+    component: OrphanagesMap,
   },
-
   {
     path: "/orphanages/create",
     name: "CreateOrphanage",
     component: CreateOrphanage,
+  },
+  {
+    path: "/orphanages/:id",
+    name: "OrphanageDetails",
+    component: Orphanage,
   },
 ];
 
