@@ -111,7 +111,7 @@
         </BaseInputControl>
 
         <button
-          class="w-full p-4 mt-12 font-extrabold text-white hover:bg-green-400 bg-green rounded-xl"
+          class="w-full p-4 mt-12 font-extrabold text-white hover:bg-green-400 bg-green rounded-2xl"
           type="submit"
         >
           Confirmar
