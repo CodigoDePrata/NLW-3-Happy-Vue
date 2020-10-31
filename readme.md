@@ -8,8 +8,18 @@ NLW #3 - Happy with Vue
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-diferencas">Qual a diferença pro projeto original?</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>
 </p>
+
+## 💻 Projeto
+
+Este é um projeto desenvolvido durante a **[Next Level Week](https://nextlevelweek.com/)**, realizada pela **[@Rocketseat](https://github.com/Rocketseat)** durante os dias 12 a 18 de Outubro de 2020.
+
+
+## 🤔 Diferenças
+
+Este projeto não foi feito como na Next Level Week, mas baseado, usando Vue no lugar do React e sem a versão mobile inicialmente, mas com o front-end sendo responsivo e instalável em celulares.
 
 
 ## 🚀 Tecnologias
@@ -23,14 +33,8 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [TypeORM](https://typeorm.io/#/)
 - [Yup](https://github.com/jquense/yup)
 - [Vue](https://vuejs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 - [Axios](https://github.com/axios/axios)
-
-
-## 💻 Projeto
-
-Este é um projeto desenvolvido durante a **[Next Level Week](https://nextlevelweek.com/)**, realizada pela **[@Rocketseat](https://github.com/Rocketseat)** durante os dias 12 a 18 de Outubro de 2020.
-
-Porém não exatamente seguindo o que foi feito na Next Level Week, diferentemente do React utilizado, aqui é utilizado Vue, e o tempo de desenvolvimento sendo extendido para depois da semana do dia 12!
 
 ---
 
