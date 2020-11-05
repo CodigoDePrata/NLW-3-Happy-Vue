@@ -1,14 +1,14 @@
 <template>
-  <div class="flex h-screen">
-    <TheSidebar />
+  <div class="h-screen md:flex">
+    <TheSidebar title="Adicione um orfanato"/>
     <div class="flex-grow overflow-y-scroll bg-gray-100">
-      <div class="my-10 text-2xl font-semibold text-center text-gray-300">
+      <div class="hidden my-10 text-2xl font-semibold text-center text-gray-300 md:block">
         Adicione um orfanato
       </div>
 
       <form
         @submit.prevent="handleFormSubmit"
-        class="w-full max-w-2xl px-20 py-16 mx-auto my-10 overflow-hidden bg-white border-gray-300 rounded-2xl"
+        class="w-full max-w-2xl px-8 py-16 mx-auto overflow-hidden bg-white border-gray-300 md:my-10 md:px-20 md:rounded-2xl"
       >
         <h1 class="text-3xl font-bold leading-none text-gray-600">Dados</h1>
         <hr class="my-6 border-0 border-b border-gray-200" />

@@ -1,13 +1,13 @@
 <template>
   <div class="relative flex flex-col w-screen h-screen md:flex-row">
     <aside
-      class="relative z-50 flex items-center justify-between flex-shrink-0 gap-2 p-4 shadow-md md:p-20 md:w-1/4 md:flex-col sidebar"
+      class="relative z-50 flex items-center justify-between flex-shrink-0 h-24 gap-2 p-4 shadow-md md:h-screen md:p-20 md:w-1/4 md:flex-col sidebar"
     >
-      <RouterLink to="/" class="self-center md:self-start">
+      <RouterLink to="/" class="self-center flex-shrink-0 md:self-start">
         <img
           src="@/assets/icons/marker.svg"
           alt="Happy"
-          class="w-14 h-14 md:h-auto md:w-auto"
+          class="w-12 h-12 md:h-auto md:w-auto"
         />
       </RouterLink>
 
@@ -28,19 +28,25 @@
     <main class="flex-grow">
       <LMap :zoom="15" :center="center" class="w-full h-full">
         <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <LMarker :lat-lng="center">
+        <LMarker
+          v-for="orphanageMarker in orphanagesMarkers"
+          :lat-lng="[orphanageMarker.latitude, orphanageMarker.longitude]"
+          :key="orphanageMarker.id"
+        >
           <LIcon
             :icon-size="[64, 72]"
             :icon-anchor="[32, 72]"
-            :popup-anchor="[172, 0]"
+            :popup-anchor="[0, -68]"
             :icon-url="require('@/assets/icons/marker.svg')"
           />
           <LPopup
             :options="{ closeButton: false }"
             class="flex items-center gap-8"
           >
-            <span class="text-xl text-cyan-700">Lar das meninas</span>
-            <BaseButton to="/orphanages/1" tag="RouterLink" size="sm">
+            <span class="text-xl text-cyan-700">{{
+              orphanageMarker.name
+            }}</span>
+            <BaseButton :to="`/orphanages/${orphanageMarker.id}`" tag="RouterLink" size="sm">
               <ArrowRightIcon />
             </BaseButton>
           </LPopup>
@@ -63,7 +69,14 @@ import { LMap, LMarker, LIcon, LTileLayer, LPopup } from "vue2-leaflet";
 import { LatLng, latLng } from "leaflet";
 import { ArrowRightIcon, PlusIcon } from "vue-feather-icons";
 import BaseButton from "@/components/base/BaseButton.vue";
+import api from "@/utils/api";
 
+type OrphanageMarker = {
+  id: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+};
 @Component({
   components: {
     LMap,
@@ -78,6 +91,19 @@ import BaseButton from "@/components/base/BaseButton.vue";
 })
 export default class OrphanagesMap extends Vue {
   center: LatLng = latLng(-23.6222, -45.4074);
+  orphanagesMarkers: Array<OrphanageMarker> = [];
+
+  async created() {
+    const response = await api.get("/orphanages");
+    this.orphanagesMarkers = response.data.map(
+      (orphanage: OrphanageMarker) => ({
+        id: orphanage.id,
+        name: orphanage.name,
+        latitude: orphanage.latitude,
+        longitude: orphanage.longitude,
+      })
+    );
+  }
 }
 </script>
 

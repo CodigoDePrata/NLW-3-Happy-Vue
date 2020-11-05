@@ -1,20 +1,23 @@
 <template>
-  <div class="flex h-screen">
-    <TheSidebar />
+  <div class="h-screen md:flex">
+    <TheSidebar title="Orfanato"/>
     <div class="flex-grow overflow-y-scroll bg-gray-100">
-      <div class="my-10 text-2xl font-semibold text-center text-gray-300">
+      <div class="hidden my-10 text-2xl font-semibold text-center text-gray-300 md:block">
         Orfanato
       </div>
 
       <div
-        class="w-full max-w-2xl pb-16 mx-auto my-10 overflow-hidden bg-white border-gray-300 rounded-2xl"
+        class="w-full max-w-2xl pb-16 mx-auto overflow-hidden bg-white border-gray-300 md:my-10 md:rounded-2xl"
       >
         <img
-          class="object-cover w-full h-64"
+          class="hidden object-cover w-full h-64 md:block"
           v-if="orphanage.images.length > 0"
           :src="orphanage.images[0].url"
         />
-        <div class="flex gap-4 px-8 my-6" v-if="orphanage.images.length > 0">
+        <div
+          v-if="orphanage.images.length > 0"
+          class="flex gap-4 px-8 py-6 overflow-x-scroll bg-gray-50 md:bg-white md:overflow-x-auto md:flex-wrap"
+        >
           <img
             class="object-cover w-24 h-24 rounded-3xl"
             v-for="image in orphanage.images"
@@ -23,7 +26,7 @@
           />
         </div>
 
-        <div class="px-20">
+        <div class="px-8">
           <h1 class="my-6 text-5xl font-bold leading-none text-gray-600">
             {{ orphanage.name }}
           </h1>
@@ -48,9 +51,13 @@
               </LMarker>
             </LMap>
 
-            <div class="py-2 font-semibold text-center text-cyan-700">
+            <a 
+            target="_blank"
+            rel="noopener noreferrer"
+            :href="`https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`"
+            class="block py-2 font-semibold text-center text-cyan-700">
               Ver rotas no Google Maps
-            </div>
+            </a>
           </div>
           <hr class="my-16 border-0 border-b border-gray-200" />
 
@@ -62,16 +69,16 @@
             {{ orphanage.instructions }}
           </p>
 
-          <div class="flex flex-wrap gap-5 my-6">
+          <div class="grid gap-5 my-6 md:grid-cols-2">
             <div
-              class="flex-grow px-6 py-8 font-semibold border rounded-4xl text-cyan-700 border-cyan-500 from-cyan-50 bg-gradient-to-b"
+              class="px-6 py-8 font-semibold border rounded-4xl text-cyan-700 border-cyan-500 from-cyan-50 bg-gradient-to-b"
             >
               <ClockIcon size="2x" class="mb-4" />
               <p>Horário de visitas</p>
               <p>{{ orphanage.opening_hours }}</p>
             </div>
             <div
-              class="flex-grow px-6 py-8 font-semibold border rounded-4xl bg-gradient-to-b"
+              class="px-6 py-8 font-semibold border rounded-4xl bg-gradient-to-b"
               :class="{
                 'from-green-50 border-green text-green':
                   orphanage.open_on_weekends,
