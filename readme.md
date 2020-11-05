@@ -3,7 +3,7 @@ NLW #3 - Happy with Vue
 </h1>
 
 <h1 align="center">
-    <img alt="Happy" title="Happy" src="./assets-md/logo.png" />
+    <img alt="Happy" title="Happy" src="./assets-md/mockup.png" />
 </h1>
 
 <p align="center">
